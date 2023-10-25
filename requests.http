@@ -1,0 +1,53 @@
+### REGISTRAR PRODUCTOR 653935773a58ce5f73dbdaa7
+POST http://localhost:5050/productor
+Content-Type: application/json
+
+{
+	"name": "Granja Tres Hermanos",
+	"logo": "https://i0.wp.com/sdsnmexico.mx/wp-content/uploads/2020/11/Encuentro-ganadero-RB-Janos-scaled.jpg?fit=2560%2C1707&ssl=1",
+	"banner": "https://previews.123rf.com/images/anastasiatukaeva/anastasiatukaeva1701/anastasiatukaeva170100326/70265729-logotipo-de-la-granja-el-emblema-de-la-agricultura-con-un-marco-de-madera-ilustraci%C3%B3n-de-vector.jpg",
+	"address": "En la granja",
+	"products": []
+} 
+
+### REGISTRAR USUARIO 65393d2684009bc8cf7adb3f
+POST http://localhost:5050/user
+Content-Type: application/json
+
+{
+	"name": "Luis Amado",
+	"address": "Mi casa",
+	"basket": []
+}
+
+### AGREGAR PRODUCTO AL CARRO
+POST http://localhost:5050/user/65393d2684009bc8cf7adb3f
+Content-Type: application/json
+
+{
+	"productorId": "653935773a58ce5f73dbdaa7",
+	"productId": 1,
+	"quantity": 3
+}
+
+### VER CARRO
+GET http://localhost:5050/user/65393d2684009bc8cf7adb3f
+
+### VER PRODUCTORES
+GET http://localhost:5050/productor
+
+### VER PRODUCTOS DE CADA PRODUCTOR
+GET http://localhost:5050/productor/653935773a58ce5f73dbdaa7
+
+### AGREGAR PRODUCTO
+POST http://localhost:5050/product/653935773a58ce5f73dbdaa7
+Content-Type: application/json
+
+{
+	"id": 2,
+	"name": "Naranja",
+	"logo": "manzana.png",
+	"price": 3,
+	"priceUnit": "/kg",
+	"description": "Manzanas frescas"
+}
